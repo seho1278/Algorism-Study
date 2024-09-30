@@ -1,13 +1,15 @@
 package Binary_Search;
-/**
- * 백준 실버4 10816 숫자 카드2
- * 수가 적혀있는 숫자 카드를 몇 개 가지고 있는지 구하기
- */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
+
+/**
+ * 백준 실버4 10816 숫자 카드2
+ * 수가 적혀있는 숫자 카드를 몇 개 가지고 있는지 구하기
+ */
 
 public class Main3 {
     public static int binarySearch(int[] arr, int target, boolean start) {
