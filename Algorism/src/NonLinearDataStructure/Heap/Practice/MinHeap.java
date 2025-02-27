@@ -1,12 +1,11 @@
-package NonLinearDataStructure.Heap;
-// ArrayList로 최대 힙 구현
+package NonLinearDataStructure.Heap.Practice;
 
 import java.util.ArrayList;
 
-class MaxHeap {
+class MinHeap {
     ArrayList<Integer> heap;
 
-    public MaxHeap() {
+    public MinHeap() {
         this.heap = new ArrayList<>();
         // 1번부터 시작하도록 더미데이터 생성
         this.heap.add(0);
@@ -17,7 +16,7 @@ class MaxHeap {
         heap.add(data);
 
         int cur = heap.size() - 1;
-        while (cur > 1 && heap.get(cur / 2) < heap.get(cur)) {
+        while (cur > 1 && heap.get(cur / 2) > heap.get(cur)) {
             int parentVal = heap.get(cur / 2);
             heap.set(cur / 2, data);
             heap.set(cur, parentVal);
@@ -45,14 +44,14 @@ class MaxHeap {
             int targetIdx = -1;
 
             if (rightIdx < heap.size()) {
-                targetIdx = heap.get(leftIdx) > heap.get(rightIdx) ? leftIdx : rightIdx;
+                targetIdx = heap.get(leftIdx) < heap.get(rightIdx) ? leftIdx : rightIdx;
             } else if (leftIdx < heap.size()) {
                 targetIdx = cur * 2;
             } else {
                 break;
             }
 
-            if (heap.get(cur) > heap.get(targetIdx)) {
+            if (heap.get(cur) < heap.get(targetIdx)) {
                 break;
             } else {
                 int parentVal = heap.get(cur);
@@ -70,33 +69,5 @@ class MaxHeap {
             System.out.print(this.heap.get(i) + " ");
         }
         System.out.println();
-    }
-}
-
-public class Practice2 {
-    public static void main(String[] args) {
-        // Test code
-        MaxHeap heap = new MaxHeap();
-        heap.insert(30);
-        heap.insert(40);
-        heap.insert(10);
-        heap.printTree();
-        heap.insert(50);
-        heap.insert(60);
-        heap.insert(70);
-        heap.printTree();
-        heap.insert(20);
-        heap.printTree();
-        heap.insert(30);
-        heap.printTree();
-
-        System.out.println();
-        System.out.println("삭제: " + heap.delete());
-        heap.printTree();
-        System.out.println("삭제: " + heap.delete());
-        heap.printTree();
-        System.out.println("삭제: " + heap.delete());
-        heap.printTree();
-
     }
 }

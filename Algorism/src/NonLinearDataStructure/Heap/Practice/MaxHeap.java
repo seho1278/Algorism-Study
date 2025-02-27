@@ -1,5 +1,4 @@
-package NonLinearDataStructure.Heap;
-// ArrayList로 최대 힙 구현
+package NonLinearDataStructure.Heap.Practice;
 
 import java.util.ArrayList;
 
@@ -70,33 +69,5 @@ class MaxHeap {
             System.out.print(this.heap.get(i) + " ");
         }
         System.out.println();
-    }
-}
-
-public class Practice2 {
-    public static void main(String[] args) {
-        // Test code
-        MaxHeap heap = new MaxHeap();
-        heap.insert(30);
-        heap.insert(40);
-        heap.insert(10);
-        heap.printTree();
-        heap.insert(50);
-        heap.insert(60);
-        heap.insert(70);
-        heap.printTree();
-        heap.insert(20);
-        heap.printTree();
-        heap.insert(30);
-        heap.printTree();
-
-        System.out.println();
-        System.out.println("삭제: " + heap.delete());
-        heap.printTree();
-        System.out.println("삭제: " + heap.delete());
-        heap.printTree();
-        System.out.println("삭제: " + heap.delete());
-        heap.printTree();
-
     }
 }
