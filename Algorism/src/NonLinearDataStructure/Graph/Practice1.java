@@ -1,4 +1,4 @@
-package NonLinearDataStructure.BinarySearchTree.Graph;
+package NonLinearDataStructure.Graph;
 
 /*
 인접 행렬을 이용한 그래프 구현

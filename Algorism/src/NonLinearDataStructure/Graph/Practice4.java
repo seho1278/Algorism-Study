@@ -1,16 +1,16 @@
-package NonLinearDataStructure.BinarySearchTree.Graph;
+package NonLinearDataStructure.Graph;
 
 /*
-인접 행렬 그래프의 DFS, BFS
+인접 리스트 그래프의 DFS, BFS
  */
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-class MyGraphMatrix2 extends MyGraphMatrix {
+class MyGraphList2 extends MyGraphList {
 
-    public MyGraphMatrix2(int size) {
+    public MyGraphList2(int size) {
         super(size);
     }
 
@@ -25,12 +25,14 @@ class MyGraphMatrix2 extends MyGraphMatrix {
             int curId = stack.pop();
             System.out.print(this.vertices[curId] + " ");
 
-            // 인접 정점 확인
-            for (int i = this.elemCnt - 1; i >= 0; i--) {
-                if (this.adjmat[curId][i] == 1 && visited[i] == false) {
-                    stack.push(i);
-                    visited[i] = true;
+            Node cur = this.adjList[curId];
+            while (cur != null) {
+                if (visited[cur.id] == false) {
+                    stack.push(cur.id);
+                    visited[cur.id] = true;
                 }
+
+                cur = cur.next;
             }
         }
         System.out.println();
@@ -40,28 +42,31 @@ class MyGraphMatrix2 extends MyGraphMatrix {
         boolean[] visited = new boolean[this.elemCnt];
         Queue<Integer> queue = new LinkedList<>();
 
-        queue.add(id);
+        queue.offer(id);
         visited[id] = true;
 
         while (!queue.isEmpty()) {
             int curId = queue.poll();
             System.out.print(this.vertices[curId] + " ");
 
-            for (int i = this.elemCnt - 1; i >= 0; i--) {
-                if (this.adjmat[curId][i] == 1 && visited[i] == false) {
-                    queue.offer(i);
-                    visited[i] = true;
+            Node cur = this.adjList[curId];
+            while (cur != null) {
+                if (visited[cur.id] == false) {
+                    queue.offer(cur.id);
+                    visited[cur.id] = true;
                 }
+
+                cur = cur.next;
             }
         }
         System.out.println();
     }
 }
 
-public class Practice3 {
+public class Practice4 {
     public static void main(String[] args) {
         // Test code
-        MyGraphMatrix2 graph = new MyGraphMatrix2(7);
+        MyGraphList2 graph = new MyGraphList2(7);
         graph.addVertex('A');
         graph.addVertex('B');
         graph.addVertex('C');
@@ -79,7 +84,6 @@ public class Practice3 {
         graph.addEdge(3, 5);
         graph.addEdge(4, 6);
         graph.addEdge(5, 6);
-        graph.printAdjacentMatrix();
 
         System.out.println();
         graph.dfs(0);

@@ -1,4 +1,4 @@
-package NonLinearDataStructure.BinarySearchTree.Graph.Practice;
+package NonLinearDataStructure.Graph.Practice;
 
 /*
 Center Node 찾기

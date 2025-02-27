@@ -1,4 +1,4 @@
-package NonLinearDataStructure.BinarySearchTree.Graph;
+package NonLinearDataStructure.Graph;
 
 /*
 연결 리스트를 이용한 그래프 구현

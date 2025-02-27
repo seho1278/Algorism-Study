@@ -1,4 +1,4 @@
-package NonLinearDataStructure.BinarySearchTree.Graph.Practice;
+package NonLinearDataStructure.Graph.Practice;
 
 /*
 주어진 그래프를 두 개의 그래프로 분리할 수 있는지 확인 하는 프로그램을 작성

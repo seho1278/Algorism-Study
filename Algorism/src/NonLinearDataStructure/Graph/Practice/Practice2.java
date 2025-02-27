@@ -1,4 +1,4 @@
-package NonLinearDataStructure.BinarySearchTree.Graph.Practice;
+package NonLinearDataStructure.Graph.Practice;
 
 /*
 주어진 그래프에서 시작 노드에서 끝 노드로 가는 길이 있는지 확인하는 프로그램 작성
